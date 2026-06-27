@@ -41,7 +41,7 @@ export function About() {
   return (
     <section id="about" className="pt-6 md:pt-10 overflow-hidden">
       <div className="w-full px-4 md:px-8">
-        <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-24 mb-16">
+        <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-24 mb-10">
           {/* Text Content */}
           <div className="lg:w-auto">
             <SectionTitle>About us</SectionTitle>
@@ -55,7 +55,7 @@ export function About() {
           </div>
 
           {/* Stats Grid */}
-          <div className="lg:w-auto flex lg:justify-end mt-8 lg:mt-0">
+          <div className="lg:w-auto flex lg:justify-end mt-3 lg:mt-0">
             <div className="grid grid-cols-2 gap-x-12 gap-y-12 w-full lg:w-auto">
               {stats.map((stat, i) => (
                 <div key={i}>
@@ -73,7 +73,7 @@ export function About() {
       </div>
 
       {/* Partner Logos Marquee */}
-      <div className="pt-12 border-t border-gray-100 relative">
+      <div className="relative">
         <div className="flex w-max animate-marquee">
           {/* We render the logos twice to create a seamless infinite loop */}
           {[...logos, ...logos].map((logo, i) => (
@@ -88,8 +88,8 @@ export function About() {
         </div>
         
         {/* Gradient fades for the edges of the marquee */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent pt-12" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent pt-12" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-32 bg-linear-to-r from-background to-transparent pt-12" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-32 bg-linear-to-l from-background to-transparent pt-12" />
       </div>
     </section>
   );
