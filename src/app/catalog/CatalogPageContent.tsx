@@ -4,8 +4,7 @@ import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
-import { catalogData, PropertyType } from "@/lib/catalogData";
-import { Button } from "@/components/ui/Button";
+import { catalogData, type PropertyType } from "@/lib/catalogData";
 
 const BLUR_DATA_URL =
   "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjZDVlMGU4Ii8+PC9zdmc+";
@@ -49,7 +48,7 @@ export default function CatalogPageContent() {
           {categories.map((cat) => (
             <button
               key={cat.id}
-              onClick={() => setFilter(cat.id as any)}
+              onClick={() => setFilter(cat.id as PropertyType | "all")}
               className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all ${
                 filter === cat.id
                   ? "bg-foreground text-background"
