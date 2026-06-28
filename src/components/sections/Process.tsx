@@ -57,7 +57,7 @@ export function Process() {
             </SectionTitle>
 
             <div className="relative mt-auto">
-              <div className="relative h-100 md:h-125 w-full rounded-2xl md:rounded-xl overflow-hidden">
+              <div className="relative h-80 md:h-100 w-full rounded-2xl md:rounded-xl overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?q=80&w=2010&auto=format&fit=crop"
                   alt="Modern building facade"
@@ -88,10 +88,10 @@ export function Process() {
                     </div>
                   </div>
                   <div className="flex flex-col justify-center">
-                    <h3 className="font-heading text-base md:text-lg font-semibold text-foreground mb-1">
+                    <h3 className="font-heading text-base md:text-lg font-semibold text-foreground leading-4 mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                    <p className="text-muted-foreground text-sm leading-4">
                       {step.description}
                     </p>
                   </div>

@@ -46,8 +46,8 @@ export function Testimonials() {
   };
 
   return (
-    <section id="reviews" className="py-16 md:py-24 bg-background overflow-hidden">
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="reviews" className="pt-8 overflow-hidden">
+      <div className="w-full px-4 md:px-8">
         <SectionTitle>What clients say about us</SectionTitle>
 
         <div className="flex flex-col mt-8 relative">
@@ -70,7 +70,7 @@ export function Testimonials() {
                       “
                     </div>
                     
-                    <p className="text-foreground text-sm md:text-base leading-relaxed mb-8 flex-grow">
+                    <p className="text-foreground text-sm md:text-base leading-relaxed mb-8 grow">
                       {testimonial.text}
                     </p>
 
@@ -104,7 +104,7 @@ export function Testimonials() {
           <div className="hidden lg:flex justify-end gap-4 mt-8">
             <button 
               onClick={handlePrev}
-              className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-50 transition-colors cursor-pointer"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-foreground flex items-center justify-center text-foreground hover:bg-gray-50 transition-colors cursor-pointer"
               aria-label="Previous testimonials"
             >
               <ChevronLeft className="w-5 h-5" />
