@@ -43,21 +43,21 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="process" className="py-16 md:py-24">
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="process" className="pt-8">
+      <div className="w-full px-4 md:px-8">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 xl:gap-24">
           
           {/* Left Column: Title & Image */}
-          <div className="lg:w-[45%] flex flex-col">
+          <div className="lg:w-[50%] flex flex-col">
             <SectionTitle 
               subtitle="We made the work process with us as simple and transparent as possible"
-              className="mb-8 md:mb-12"
+              className="mb-4"
             >
               How we work
             </SectionTitle>
 
             <div className="relative mt-auto">
-              <div className="relative h-[400px] md:h-[500px] w-full rounded-2xl md:rounded-[2rem] overflow-hidden">
+              <div className="relative h-100 md:h-125 w-full rounded-2xl md:rounded-xl overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?q=80&w=2010&auto=format&fit=crop"
                   alt="Modern building facade"
@@ -75,7 +75,7 @@ export function Process() {
           </div>
 
           {/* Right Column: Steps List */}
-          <div className="lg:w-[55%] flex flex-col pt-2 lg:pt-0">
+          <div className="lg:w-[50%] flex flex-col pt-3">
             <div className="flex flex-col">
               {steps.map((step, idx) => (
                 <div
