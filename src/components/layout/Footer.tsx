@@ -33,13 +33,13 @@ export function Footer() {
           {/* Navigation Links */}
           <div className="grid grid-cols-2 gap-8 md:w-1/3">
             <div className="flex flex-col gap-4 text-sm text-muted-foreground">
-              <Link href="#about" className="hover:text-brand transition-colors">About us</Link>
-              <Link href="#catalog" className="hover:text-brand transition-colors">Catalog</Link>
-              <Link href="#process" className="hover:text-brand transition-colors">Work process</Link>
+              <Link href="/about" className="hover:text-brand transition-colors">About us</Link>
+              <Link href="/catalog" className="hover:text-brand transition-colors">Catalog</Link>
+              <Link href="/process" className="hover:text-brand transition-colors">Work process</Link>
             </div>
             <div className="flex flex-col gap-4 text-sm text-muted-foreground">
-              <Link href="#reviews" className="hover:text-brand transition-colors">Reviews</Link>
-              <Link href="#contact" className="hover:text-brand transition-colors">Contacts</Link>
+              <Link href="/reviews" className="hover:text-brand transition-colors">Reviews</Link>
+              <Link href="/contact" className="hover:text-brand transition-colors">Contacts</Link>
             </div>
           </div>
         </div>
