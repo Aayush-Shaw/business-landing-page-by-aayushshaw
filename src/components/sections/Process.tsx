@@ -1,6 +1,9 @@
 import * as React from "react";
 import Image from "next/image";
 import { SectionTitle } from "@/components/ui/SectionTitle";
+
+const BLUR_DATA_URL =
+  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjYzRkNWRmIi8+PC9zdmc+";
 import { Badge } from "@/components/ui/Badge";
 import {
   MessageSquare,
@@ -60,9 +63,13 @@ export function Process() {
               <div className="relative h-80 md:h-100 w-full rounded-2xl md:rounded-xl overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?q=80&w=2010&auto=format&fit=crop"
-                  alt="Modern building facade"
+                  alt="Modern building facade showcasing commercial real estate architecture"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={75}
+                  loading="lazy"
+                  placeholder="blur"
+                  blurDataURL={BLUR_DATA_URL}
                   className="object-cover"
                 />
               </div>

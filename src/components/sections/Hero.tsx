@@ -4,6 +4,9 @@ import * as React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 
+const BLUR_DATA_URL =
+  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjN2E5Y2IyIi8+PC9zdmc+";
+
 const images = [
   "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop",
@@ -35,7 +38,11 @@ export function Hero() {
               alt={`Commercial property ${index + 1}`}
               fill
               sizes="100vw"
-              priority={true}
+              quality={75}
+              preload={index === 0}
+              loading={index === 0 ? "eager" : "lazy"}
+              placeholder="blur"
+              blurDataURL={BLUR_DATA_URL}
               className={`object-cover object-center transition-opacity duration-1000 ${
                 index === currentIndex ? "opacity-100" : "opacity-0"
               }`}

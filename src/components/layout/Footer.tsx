@@ -46,7 +46,7 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="mt-16 pt-8 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-400">
-          <p>© 2024 Space. All rights reserved.</p>
+          <p>&copy; 2026 Space. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="#" className="hover:text-brand transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-brand transition-colors">Terms of Service</Link>

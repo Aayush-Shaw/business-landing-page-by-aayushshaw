@@ -8,6 +8,9 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { catalogData } from "@/lib/catalogData";
 import { Button } from "@/components/ui/Button";
 
+const BLUR_DATA_URL =
+  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjZDVlMGU4Ii8+PC9zdmc+";
+
 export function Catalog() {
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const [touchStart, setTouchStart] = React.useState<number | null>(null);
@@ -98,8 +101,12 @@ export function Catalog() {
                           alt={prop.title}
                           fill
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
+                          quality={75}
+                          loading={i === 0 ? "eager" : "lazy"}
+                          preload={i === 0}
+                          placeholder="blur"
+                          blurDataURL={BLUR_DATA_URL}
                           className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          priority={i === 0}
                           draggable={false}
                         />
                       </div>
