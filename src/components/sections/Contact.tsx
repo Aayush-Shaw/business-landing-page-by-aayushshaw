@@ -6,9 +6,9 @@ import { Input } from "@/components/ui/Input";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-16 md:py-24">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="bg-[#242426] rounded-2xl md:rounded-3xl p-8 md:p-16 lg:p-20 text-white flex flex-col lg:flex-row gap-12 lg:gap-24">
+    <section id="contact" className="pt-8">
+      <div className="w-full px-4 md:px-8">
+        <div className="bg-[#242426] rounded-2xl md:rounded-xl p-8 md:p-16 lg:p-20 text-white flex flex-col lg:flex-row gap-12 lg:gap-24">
           
           {/* Text Content */}
           <div className="lg:w-1/2 flex flex-col justify-center">

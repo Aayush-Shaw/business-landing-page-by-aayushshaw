@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Inter, Roboto } from "next/font/google";
+import { Questrial, Gantari } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const questrial = Questrial({
+  variable: "--font-questrial",
   subsets: ["latin"],
+  weight: ["400"],
   display: "swap",
 });
 
-const roboto = Roboto({
-  variable: "--font-roboto",
+const gantari = Gantari({
+  variable: "--font-gantari",
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
   display: "swap",
 });
 
@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${roboto.variable} h-full antialiased scroll-smooth`}
+      className={`${questrial.variable} ${gantari.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col font-sans">
         <Navbar />

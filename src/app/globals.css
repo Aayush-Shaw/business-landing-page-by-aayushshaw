@@ -7,8 +7,8 @@
   --color-foreground: #212529;
   --color-muted: #f2f2f7;
   --color-muted-foreground: #6c757d;
-  --font-heading: var(--font-inter);
-  --font-sans: var(--font-roboto);
+  --font-heading: var(--font-questrial);
+  --font-sans: var(--font-gantari);
 
   --animate-marquee: marquee 30s linear infinite;
 
