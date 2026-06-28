@@ -12,8 +12,8 @@ export function Catalog() {
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const [touchStart, setTouchStart] = React.useState<number | null>(null);
   const [touchEnd, setTouchEnd] = React.useState<number | null>(null);
-  
-  // Show 3 cards on desktop, 1 on mobile. 
+
+  // Show 3 cards on desktop, 1 on mobile.
   // For simplicity in this demo slider, we'll slide 1 card at a time.
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev > 0 ? prev - 1 : catalogData.length - 3));
@@ -49,20 +49,22 @@ export function Catalog() {
   };
 
   return (
-    <section id="catalog" className="py-16 md:py-24">
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="catalog" className="pt-8">
+      <div className="w-full px-4 md:px-8">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
           {/* Title Area */}
-          <div className="lg:w-1/4 shrink-0 flex flex-col">
-            <SectionTitle
-              subtitle="Wide selection of real estate for your business"
-            >
+          <div className="lg:w-1/4 shrink-0 flex flex-col sm:flex-row sm:items-center sm:justify-between lg:flex-col lg:items-start lg:justify-start">
+            <SectionTitle subtitle="Wide selection of real estate for your business" className="md:mb-0 lg:mb-5">
               Property Catalog
             </SectionTitle>
-            
-            <div className="mt-4 md:mt-8">
+
+            <div className="mt-4 md:mt-0 lg:mt-8 shrink-0">
               <Link href="/catalog">
-                <Button variant="default" size="lg" className="w-full md:w-auto">
+                <Button
+                  variant="whiteDarkText"
+                  size="lg"
+                  className="w-full md:w-auto"
+                >
                   Explore full catalog
                 </Button>
               </Link>
@@ -71,22 +73,26 @@ export function Catalog() {
 
           {/* Cards Area */}
           <div className="lg:w-3/4 flex flex-col overflow-hidden relative">
-            
             {/* Inner slider container */}
-            <div 
-              className="overflow-hidden mx-[-12px]"
+            <div
+              className="overflow-hidden -mx-3"
               onTouchStart={onTouchStart}
               onTouchMove={onTouchMove}
               onTouchEnd={onTouchEndEvent}
             >
-              <div 
+              <div
                 className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(calc(-${currentIndex} * var(--slide-width)))` }}
+                style={{
+                  transform: `translateX(calc(-${currentIndex} * var(--slide-width)))`,
+                }}
               >
                 {catalogData.map((prop, i) => (
-                  <div key={prop.id} className="w-full md:w-1/2 lg:w-1/3 shrink-0 px-3">
-                    <div className="group flex flex-col select-none">
-                      <div className="relative h-[300px] md:h-[350px] w-full rounded-2xl md:rounded-3xl overflow-hidden mb-4">
+                  <div
+                    key={prop.id}
+                    className="w-full md:w-1/2 lg:w-1/3 shrink-0 px-3"
+                  >
+                    <div className="group flex flex-col select-none border-2 rounded-2xl md:rounded-xl bg-white/30 border-white/10">
+                      <div className="relative h-75 md:h-87.5 w-full rounded-2xl md:rounded-xl overflow-hidden">
                         <Image
                           src={prop.image}
                           alt={prop.title}
@@ -97,12 +103,16 @@ export function Catalog() {
                           draggable={false}
                         />
                       </div>
-                      <h3 className="font-heading font-semibold text-lg md:text-xl text-foreground mb-1 line-clamp-1">
+                      <h3 className="font-heading font-semibold text-lg md:text-lg p-2 text-foreground mb-1 line-clamp-1">
                         {prop.title}
                       </h3>
-                      <div className="flex items-center justify-between mt-1">
-                        <p className="text-sm text-muted-foreground">{prop.area}</p>
-                        <p className="text-sm font-medium text-foreground">{prop.price}</p>
+                      <div className="flex items-center justify-between p-2 mt-1">
+                        <p className="text-sm text-muted-foreground">
+                          {prop.area}
+                        </p>
+                        <p className="text-sm font-medium text-foreground">
+                          {prop.price}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -112,14 +122,14 @@ export function Catalog() {
 
             {/* Navigation Controls */}
             <div className="hidden lg:flex justify-end gap-4 mt-8">
-              <button 
+              <button
                 onClick={handlePrev}
-                className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-gray-50 transition-colors cursor-pointer"
+                className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-foreground flex items-center justify-center text-foreground hover:bg-gray-50 transition-colors cursor-pointer"
                 aria-label="Previous properties"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
-              <button 
+              <button
                 onClick={handleNext}
                 className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-foreground text-background flex items-center justify-center hover:bg-foreground/90 transition-colors cursor-pointer"
                 aria-label="Next properties"
