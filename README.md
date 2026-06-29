@@ -133,6 +133,8 @@ All pages are statically generated at build time — no server required for serv
 
 - 🔗 GitHub: [@Aayush-Shaw](https://github.com/Aayush-Shaw)
 - 📧 Email: aayushshaw240@gmail.com
+- 🔗 Portfolio: [Aayush Shaw](https://aayushshaw.vercel.app/)
+
 
 ---
 
